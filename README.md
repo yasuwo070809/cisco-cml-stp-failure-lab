@@ -36,7 +36,8 @@ cisco-cml-stp-failure-lab/
 ├── docs/
 │   ├── topology.md        # トポロジ図 (Mermaid) とポートマッピング
 │   ├── test-plan.md        # 試験項目書
-│   └── verification.md      # 確認結果・合否判定
+│   ├── verification.md      # 確認結果・合否判定
+│   └── status/              # スイッチ毎HTMLステータスシート (SW1/SW2/SW3 + index)
 ├── cml/
 │   └── stp-failure-lab.yaml # CMLラボトポロジ定義（機微情報なし、再構築用）
 ├── scripts/                # ラボ構築・試験自動化スクリプト（接続情報は環境変数）
@@ -92,6 +93,19 @@ graph TD
 
 全8試験項目すべて OK。詳細は [docs/verification.md](docs/verification.md)、
 試験項目書は [docs/test-plan.md](docs/test-plan.md) を参照。
+
+### Status Sheets (HTML)
+
+スイッチ毎の3フェーズ状態を整理したHTMLステータスシートを用意しています。
+
+- [docs/status/index.html](docs/status/index.html) — 全スイッチサマリ
+- [docs/status/SW1.html](docs/status/SW1.html) / [SW2.html](docs/status/SW2.html) / [SW3.html](docs/status/SW3.html)
+
+GitHub上ではHTMLはソース表示になるため、レンダリングして見るには次のいずれかが必要です。
+
+- リポジトリを clone してローカルでファイルを開く
+- GitHub Pages を有効化する（Settings → Pages → Branch: `main` / Folder: `/docs`）
+  有効化後は `https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/` で閲覧可能
 
 ### 技術的な観察事項
 
