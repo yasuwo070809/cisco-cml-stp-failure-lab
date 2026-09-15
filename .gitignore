@@ -1,0 +1,58 @@
+# ─────────────────────────────────────────────
+#  Secrets / credentials — NEVER commit
+# ─────────────────────────────────────────────
+*.env
+.env
+.env.*
+*.secret
+secrets*
+credentials*
+credential*
+*credentials.json
+*password*
+*PASSWORD*
+CML_PASSWORD*
+CML_USER*
+CML_URL*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+known_hosts
+.netrc
+.virlrc
+
+# Cloud / infra secrets
+.aws/
+aws_credentials*
+*.tfvars
+terraform.tfstate*
+
+# ─────────────────────────────────────────────
+#  Python tooling
+# ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env-venv/
+
+# ─────────────────────────────────────────────
+#  OS / editor
+# ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# ─────────────────────────────────────────────
+#  Local scratch / logs
+# ─────────────────────────────────────────────
+scratchpad/
+tmp/
+*.log

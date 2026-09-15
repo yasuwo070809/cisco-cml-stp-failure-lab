@@ -1,0 +1,109 @@
+########## PHASE: normal ##########
+
+===== SW1 =====
+
+SW1# show spanning-tree vlan 1
+*Sep 15 04:11:17.069: %PNP-6-PNP_SAVING_TECH_SUMMARY: Saving PnP tech summary (/pnp-tech/pnp-tech-discovery-summary)... Please wait. Do not interrupt.
+SW1#
+*Sep 15 04:11:17.175: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+*Sep 15 04:11:17.179: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+*Sep 15 04:11:17.287: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+SW1#
+*Sep 15 04:11:17.387: %PNP-6-PNP_TECH_SUMMARY_SAVED_OK: PnP tech summary (/pnp-tech/pnp-tech-discovery-summary) saved successfully (elapsed time: 1 seconds).
+*Sep 15 04:11:17.387: %PNP-6-PNP_DISCOVERY_STOPPED: PnP Discovery stopped (Config Wizard)
+SW1#show spanning-tree vlan 1
+
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    4097
+             Address     aabb.cc00.0400
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    4097   (priority 4096 sys-id-ext 1)
+             Address     aabb.cc00.0400
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Et0/0               Desg FWD 100       128.1    P2p 
+Et0/1               Desg FWD 100       128.2    P2p 
+
+SW1# show interfaces status
+Port         Name               Status       Vlan       Duplex  Speed Type
+Et0/0        LINK-TO-SW2 (PRIMA connected    1            full   auto 10/100/1000BaseTX
+Et0/1        LINK-TO-SW3        connected    1            full   auto 10/100/1000BaseTX
+Et0/2                           disabled     1            full   auto 10/100/1000BaseTX
+Et0/3                           disabled     1            full   auto 10/100/1000BaseTX
+
+===== SW2 =====
+
+SW2# show spanning-tree vlan 1
+SW2#
+*Sep 15 04:11:20.270: %PNP-6-PNP_TECH_SUMMARY_SAVED_OK: PnP tech summary (/pnp-tech/pnp-tech-discovery-summary) saved successfully (elapsed time: 1 seconds).
+*Sep 15 04:11:20.270: %PNP-6-PNP_DISCOVERY_STOPPED: PnP Discovery stopped (Config Wizard)
+SW2#show spanning-tree vlan 1
+
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    4097
+             Address     aabb.cc00.0400
+             Cost        100
+             Port        1 (Ethernet0/0)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    8193   (priority 8192 sys-id-ext 1)
+             Address     aabb.cc00.0500
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Et0/0               Root FWD 100       128.1    P2p 
+Et0/1               Desg FWD 100       128.2    P2p 
+
+SW2# show interfaces status
+Port         Name               Status       Vlan       Duplex  Speed Type
+Et0/0        LINK-TO-SW1 (PRIMA connected    1            full   auto 10/100/1000BaseTX
+Et0/1        LINK-TO-SW3 (BACKU connected    1            full   auto 10/100/1000BaseTX
+Et0/2                           disabled     1            full   auto 10/100/1000BaseTX
+Et0/3                           disabled     1            full   auto 10/100/1000BaseTX
+
+===== SW3 =====
+
+SW3# show spanning-tree vlan 1
+*Sep 15 04:11:33.575: %PNP-6-PNP_SAVING_TECH_SUMMARY: Saving PnP tech summary (/pnp-tech/pnp-tech-discovery-summary)... Please wait. Do not interrupt.
+SW3#
+*Sep 15 04:11:33.678: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+*Sep 15 04:11:33.679: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+*Sep 15 04:11:33.788: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+SW3#
+*Sep 15 04:11:33.888: %PNP-6-PNP_TECH_SUMMARY_SAVED_OK: PnP tech summary (/pnp-tech/pnp-tech-discovery-summary) saved successfully (elapsed time: 1 seconds).
+*Sep 15 04:11:33.888: %PNP-6-PNP_DISCOVERY_STOPPED: PnP Discovery stopped (Config Wizard)
+SW3#show spanning-tree vlan 1
+
+VLAN0001
+  Spanning tree enabled protocol rstp
+  Root ID    Priority    4097
+             Address     aabb.cc00.0400
+             Cost        100
+             Port        1 (Ethernet0/0)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     aabb.cc00.0600
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  300 sec
+
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Et0/0               Root FWD 100       128.1    P2p 
+Et0/1               Altn BLK 100       128.2    P2p 
+
+SW3# show interfaces status
+Port         Name               Status       Vlan       Duplex  Speed Type
+Et0/0        LINK-TO-SW1        connected    1            full   auto 10/100/1000BaseTX
+Et0/1        LINK-TO-SW2 (BACKU connected    1            full   auto 10/100/1000BaseTX
+Et0/2                           disabled     1            full   auto 10/100/1000BaseTX
+Et0/3                           disabled     1            full   auto 10/100/1000BaseTX
