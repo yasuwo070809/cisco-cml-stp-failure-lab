@@ -4,6 +4,10 @@ Cisco Modeling Labs (CML) 上に **IOL-L2 (ioll2-xe)** ノード3台を用いて
 トライアングル冗長構成における **Rapid PVST+ の障害試験（リンク断→バックアップパス
 へのフェイルオーバー→リンク復旧→元トポロジへの復帰）** の検証記録です。
 
+## 📊 Status Sheets
+
+**[→ 全スイッチ ステータスシートを見る](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/)**（SW1 / SW2 / SW3、GitHub Pages上でレンダリング表示）
+
 > ⚠️ 本リポジトリには **パスワード・認証情報 (credentials) を一切含みません**。
 > CML への接続情報は実行時に環境変数 (`CML_URL` / `CML_HOST` / `CML_USER` /
 > `CML_PASSWORD`) で渡し、成果物には保存していません。
@@ -94,16 +98,11 @@ graph TD
 全8試験項目すべて OK。詳細は [docs/verification.md](docs/verification.md)、
 試験項目書は [docs/test-plan.md](docs/test-plan.md) を参照。
 
-### Status Sheets (HTML)
-
-スイッチ毎の3フェーズ状態を整理したHTMLステータスシートです。クリックするとGitHub Pages上でレンダリングされた状態で開きます（ソースコード表示ではありません）。
-
-- 🔗 **[全スイッチサマリ (index)](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/)**
-- 🔗 [SW1 (Root Bridge)](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW1.html)
-- 🔗 [SW2](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW2.html)
-- 🔗 [SW3](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW3.html)
-
-（ソースを直接見たい場合は [docs/status/](docs/status/) 配下を参照）
+スイッチ毎のフェーズ別状態は冒頭の [📊 Status Sheets](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/) を参照
+（[SW1](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW1.html) /
+[SW2](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW2.html) /
+[SW3](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW3.html)。
+ソースを直接見たい場合は [docs/status/](docs/status/) 配下）。
 
 ### 技術的な観察事項
 
