@@ -96,16 +96,14 @@ graph TD
 
 ### Status Sheets (HTML)
 
-スイッチ毎の3フェーズ状態を整理したHTMLステータスシートを用意しています。
+スイッチ毎の3フェーズ状態を整理したHTMLステータスシートです。クリックするとGitHub Pages上でレンダリングされた状態で開きます（ソースコード表示ではありません）。
 
-- [docs/status/index.html](docs/status/index.html) — 全スイッチサマリ
-- [docs/status/SW1.html](docs/status/SW1.html) / [SW2.html](docs/status/SW2.html) / [SW3.html](docs/status/SW3.html)
+- 🔗 **[全スイッチサマリ (index)](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/)**
+- 🔗 [SW1 (Root Bridge)](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW1.html)
+- 🔗 [SW2](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW2.html)
+- 🔗 [SW3](https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/SW3.html)
 
-GitHub上ではHTMLはソース表示になるため、レンダリングして見るには次のいずれかが必要です。
-
-- リポジトリを clone してローカルでファイルを開く
-- GitHub Pages を有効化する（Settings → Pages → Branch: `main` / Folder: `/docs`）
-  有効化後は `https://yasuwo070809.github.io/cisco-cml-stp-failure-lab/status/` で閲覧可能
+（ソースを直接見たい場合は [docs/status/](docs/status/) 配下を参照）
 
 ### 技術的な観察事項
 
